@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love 💌</title>
+
+  <!-- Poppins font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Page background and font */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(#ffe4ec, #fff0f5);
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    /* GIF image styling */
+    a img {
+      width: 320px; /* adjust as needed */
+      max-width: 80vw;
+      cursor: pointer;
+      border-radius: 12px; /* optional soft edges */
+      transition: transform 0.3s;
+    }
+
+    a img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Pulsating "Click Me" text */
+    .click-me {
+      margin-top: 20px;
+      font-size: 26px;
+      font-weight: 600;
+      color: #c71585;
+      animation: pulse 1.2s infinite;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 600px) {
+      a img {
+        width: 240px;
+      }
+      .click-me {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Clickable GIF -->
+  <a href="letter.html">
+    <img src="rushnav.gif" alt="Click me!">
+  </a>
+
+  <!-- Pulsating text -->
+  <div class="click-me">💌 click me 💌</div>
+
+</body>
+</html>

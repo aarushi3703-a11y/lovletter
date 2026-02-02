@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💌</title>
+
+  <!-- Poppins font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(#fff0f5, #ffe4ec);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 30px;
+      overflow: hidden; /* needed for floating hearts */
+    }
+
+    .container {
+      text-align: center;
+    }
+
+   .letter {
+  background: white;
+  padding: 40px;
+  max-width: 540px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  line-height: 1.8;
+  font-size: 18px;
+  animation: fadeIn 2s ease;
+  position: relative;
+  z-index: 1;
+
+  /* Added to make letter scrollable */
+  max-height: 80vh;     /* limits the height to 80% of viewport */
+  overflow-y: auto;     /* enables vertical scrolling */
+}
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .photos {
+      margin-top: 35px;
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .photos img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .photos img:hover {
+      transform: scale(1.06);
+      box-shadow: 0 10px 20px rgba(199, 21, 133, 0.35);
+    }
+
+    audio {
+      display: none; /* hide audio controls */
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      font-size: 16px;
+      color: #ff69b4;
+      pointer-events: none;
+      opacity: 0.8;
+      animation: floatUp linear forwards;
+      z-index: 0;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 0.8; }
+      100% { transform: translateY(-250px) scale(0.5); opacity: 0; }
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 600px) {
+      .letter {
+        font-size: 18px;
+        padding: 30px;
+      }
+      .photos img {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background music -->
+  <audio autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <div class="letter">
+      <p>
+        Beloved Arnav,<br><br>
+        Believe it or not, this is not my first time writing to you. I have written scores of letters addressed to you, some hopefully but most of them heartbroken and sad. This, however, will be the first one to actually reach you. <br><br>
+I love you. <br><br>
+I loved you 2 years ago, when I was confused and didnt know it yet; I loved you 10 months ago, when I was terrified of losing you; I love you today, in between calls and texts from kilometers away. And I will love you forever through everything, each day a little more than the last. I love you. <br><br> 
+We have been through so much over the years, failing each other at times and being each other's anchors always. The truth is, I dont care about the heartbreaks anymore. I would go through all of them and more again because I know now that those tears watered the saplings of our undying love. And frankly, who has the time for revisiting the past when years of new experiences lay ahead of us. <br><br>
+Being away from you has been so difficult, these past 3 weeks have felt like 3 millenia. Its so hard to see your face all pixelated and laggy now after having held and kissed it. I miss you I miss you I miss you so sorely.<br><br>
+There is a piece of you that resides in me permanently now in nooks and crannies that you stubbornly found your way into and lodged yourself. You are in my temporal lobe when I find myself humming the songs that we listen to together, in my occipital when I see something you would laugh at or smile at (maybe both). You are present in the way I go to sleep yearning for your heart beating under my ears. The thought of you greets me when I wake up before the sunlight can. This piece of you is the light at the end of the tunnel that keeps me running towards it, faster and and more vigourated everytime I see it. <br><br> 
+I want to keep fighting for us, stealing away moments of togetherness in calls or texts or just simply when I think of you and us. I cherish that we can make time for each other and be so alive in each others worlds that we have never existed in. I love you for never letting me cry too much and for never letting me forget our dreams- dreams that we both work for everyday. I love you and I will do everything within my power to put a smile on your face, I promise. <br><Br> (I am even brave enough to figure out my dormant html skills for this. love u)
+      </p>
+    </div>
+
+  
+  <!-- Floating hearts script -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "❤️";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      const size = 12 + Math.random() * 8;
+      heart.style.fontSize = size + "px";
+      const duration = 2 + Math.random() * 2;
+      heart.style.animationDuration = duration + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), duration * 1000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+</body>
+</html>
+
